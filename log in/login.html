@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+ <div class="word">
+    <p class="welcome">Welcome</p>
+    <br>
+    <p class="back">Back!</p>
+
+</div>
+
+ <div class="image">
+    <img src="icon-nav.png" width="70px" >
+</div>
+
+<div class="img">
+    <img src="2.png" width="700px"/>
+</div>
+
+<div class="container">   
+    <form id="login-form" >
+        <h2>Hello! Welcome Back.</h2>
+        <h4>Login with the data you entered during Registration.</h4>
+        <br><br>
+        <div class="email-login">
+            <label id="email-field" for="email">Email Address </label>
+            <input id="email" type="email" name="email" required>
+             <div id="email-error" class="error-message"></div> 
+        </div>
+        <div class="password-login">
+            <label for="password">Password</label>
+            <input id="password" type="password" name="password" required>
+              <div id="password-error" class="error-message"></div>  
+            <span class="toggle-password" onclick="togglePasswordVisibility()">
+            <img src="close.png" alt="Lock" width="27px">
+            </span>
+        </div>
+
+        <div class="forgot">
+        <a href="www.forgot.com">Forgot Password?</a>
+        </div>
+        <br>
+         <button class="Login" type="submit" onclick="validatePasswordAndForm()">Login Now</button>  
+        <br><br>
+        <button class="Google" type="submit"> <img src="icons8-google-48.png" style=" width : 6%;" > Continue with Google </button>
+        <br><br>
+        <div class="register">
+            <h5>Don<sup>,</sup>t have an Account? <a href="../sign_up/signup.html">REGISTER</a></h5>
+            </div>
+</div>
+    </form>
+<script src="log.js"></script>
+</html>

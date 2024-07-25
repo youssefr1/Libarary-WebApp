@@ -1,0 +1,629 @@
+/***************************** general style ****************************/
+
+* {
+    margin: 0 ;
+    padding: 0;
+}
+@font-face {
+    font-family: 'PlayfairDisplay','Roboto-Regular';
+    src: url(../font/PlayfairDisplay-Italic.ttf)format('ttf');
+    src: url(../font/Roboto-Regular.ttf)format('ttf');
+}
+
+:root{
+    --primary-color: #5352ED;
+    --secondary-color: #FF7F56;
+    --secondary-color-dark: #ff551c;
+    --text-color-h6:#646363;
+    --text-color-footer:#525059;
+}
+
+body{
+    background-color: #F4F6FD;
+    padding: 0;
+    margin: 0;
+}
+::-webkit-scrollbar {
+width: 5px;
+}
+
+::-webkit-scrollbar-track {
+background: #888;
+}
+
+::-webkit-scrollbar-thumb {
+background: var(--secondary-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+background: var(--secondary-color-dark);
+}
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+.btn-primary {
+    background-color: var(--primary-color);
+}
+.btn-secondary {
+    background-color: var(--secondary-color);
+}
+.btn-secondary:hover {
+    background-color: var(--secondary-color-dark);
+    transition: all ease 0.9s;
+}
+.btn-login{
+    color: var(--primary-color);
+    background-color: transparent;
+    border: 0;
+    margin-right: 5px;
+    padding: 4px 6px;
+    margin-top: 5px;
+}
+.btn-signup{
+    background-color: var(--secondary-color);
+    margin-right: 5px;
+    padding: 4px 6px;
+    margin-top: 5px;
+    border: #FF7F56;
+}
+
+/************************* end general style *************************************/
+
+/*************************************** navbar style  ******************************/
+
+
+nav {
+    background-color: transparent;
+}
+
+nav .navbar-brand {
+    margin-right: 0;
+}
+nav .navbar-brand img {
+    width: 40px;
+    height: 40px;
+    display: inline;
+    margin-right: 0;
+}
+nav .name-brand  {
+    display: inline;
+    margin-bottom: 0;
+    margin-right: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'PlayfairDisplay';
+    color: var(--primary-color);
+}
+nav .name-brand span {
+    color: var(--secondary-color);
+}
+
+nav .navbar-nav {
+    margin-left: 15px;
+    font-size: 15px;
+
+}
+nav.navbar.noTansparrent {
+    background-color: #fff;
+    /* border: 1px solid; */
+}
+
+nav.navbar .noTansparrent .navbar-nav .nav-item a.nav-link:hover,
+nav.navbar .noTansparrent .navbar-nav .nav-item a.nav-link.active{
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--secondary-color);
+    transition: all ease 0.2s;
+
+} 
+
+nav .navbar-nav .nav-item a.active,
+nav .navbar-nav .nav-item a.active:hover {
+    color: white;
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+}
+
+nav .navbar-nav .nav-item a:hover {
+    /* color: white;
+    background-color: var(--secondary-color);
+    border-radius: 5px; */
+    color: var(--secondary-color);
+    /* border-bottom: 1px solid var(--secondary-color); */
+    transition: all ease 0.2s; 
+}
+
+nav .btn-secondary:hover {
+    cursor: pointer;
+    background-color: var(--secondary-color-dark);
+    transition: all ease 0.9s;
+}
+
+nav form {
+    width: 30%;
+}
+nav form .form-control {
+    width: 100%;
+}
+
+/********************************************************* end navbar style  ***********************************************/
+
+/************************************************************ home style  ***************************************************/
+
+
+
+section#Home {
+    position: relative;
+    /* margin-top: 50px; */
+    height: 730px;
+
+}
+
+section#Home video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: -1;
+}
+.overlay {
+    background-color: rgba(255, 255, 255, 0.7);
+    height: 100%;
+}
+section .image-header {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+section .image-header img {
+    /* height: 650px; */
+    width: 100%;
+}
+section#Home .text-header {
+    position: absolute;
+    top: 10%;
+    left: 2%;
+}
+
+section#Home .text-header h6 {
+    color: var(--text-color-h6);
+    font-size: 14px;
+}
+
+section#Home .text-header h1 {
+    font-size: 50px;
+    color: var(--secondary-color);
+}
+
+section#Home .text-header p {
+    line-height: 18px;
+    font-size: 14px;
+    width: 60%;
+    color: var(--text-color-h6);
+}
+
+section#Home .text-header .btn-secondary {
+    border: 0;
+    width: 40%;
+    height: 50px;
+    margin-top: 30px;
+}
+
+section#Home .contact {
+    position: absolute;
+    bottom: 5%;
+    /* margin-top: 180px; */
+    left: 2%;
+}
+section#Home .contact h5 {
+    color: var(--primary-color);
+}
+section#Home .contact p {
+    color: var(--text-color-h6);
+    margin-bottom: 1px;
+}
+
+/************************************************************************ end home style  ***********************************/
+
+/************************************************************************ about style  **************************************/
+
+section#about{
+    background-color: var(--primary-color);
+    width: 90%;
+    margin: auto;
+    padding: 100px 0;
+    justify-content: center;
+    display: flex;
+}
+section#about .features .feature {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+}
+section#about .features .feature img {
+    justify-items: center;
+    background-color: white;
+    border-radius: 50%;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+section#about .features .feature h3 {
+    color: white;
+    font-size: 25px;
+    text-align: center;
+}
+
+/************************************************************************** end about style  ****************************************/
+
+/**************************************************************************** trending style *****************************************/
+section#Adventure {
+    margin-top: 30px;
+}
+section.trending {
+    padding-top: 120px;
+    /* position: relative; */
+    /* height: 100%; */
+}
+section.trending .text-header {
+    text-align: center;
+    margin-top: -50px;
+}
+section.trending .text-header h1 {
+    line-height: 15px;
+    font-size: 48px;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 50px;
+    padding-top: 10px;
+}
+
+section.trending .card {
+    /* position: relative; */
+    width: 235px;
+    /* height: 300px; */
+    border: 0;
+    background-color: transparent;
+    margin: 30px;
+    padding: 0;
+}
+section.trending .cards {
+    margin-left: 5px;
+    width: 100%;
+}
+section.trending .card .card-title {
+    font-size: 20px;
+    margin-top: 10px;
+}
+section.trending .card .card-text{
+    color: var(--text-color-h6);
+    font-weight: lighter;
+}
+section.trending .card .btn-card {
+    color: var(--secondary-color);
+    position: absolute;
+    bottom: -5%;
+    left: 0;
+}
+section.trending .card .btn-card:hover {
+    color: white;
+    background-color: var(--secondary-color);
+    cursor: pointer;
+    transition: all ease 0.9s;
+}
+
+
+
+/********************************************************************************************* end tending style ****************************************/
+
+/*  start Ahmed Elomataz bellah alkamil */
+
+
+
+.All{
+
+    margin-top: 40px;
+    padding-top: 20px;
+}
+.first {
+    position: relative;
+    /* left: 5%; تحديد المسافة بنسبة للعرض */
+}
+
+#first_line {
+    color: var(--primary-color);
+    font-size: 2.5rem; /* تحديد الحجم بوحدة نسبية */
+    text-indent: 2rem; /* تحديد المسافة بوحدة نسبية */
+}
+
+#options {
+    position: absolute;
+    left: 80%; 
+    top: 0; 
+    background-color: #F4F6FD;
+    border: none; 
+}
+
+.upper-buttons, .lower-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 7rem; 
+    padding: 4rem; 
+}
+.upper-buttons button, .lower-buttons button {
+    color: whitesmoke;
+    background-color: var(--secondary-color);
+    width: 12rem;
+    height: 5rem;
+    font-size: 1.5rem;
+    border: 0;
+    border-radius: 10px; 
+    transition: all ease 0.9s;
+}
+.upper-buttons button:hover,.lower-buttons button:hover {
+    background-color: var(--secondary-color-dark);
+}
+
+#seconed_line {
+    position: absolute;
+    left: 2%; 
+    font-size: 2.5rem; 
+    color: var(--primary-color);
+}
+
+.button_see {
+    position: absolute;
+    left: 82%; 
+    font-size: 1.5rem;
+    color: rgb(83, 82, 237);
+    background-color: #F4F6FD;
+    border: none; /* لا حاجة للحدود هنا */
+}
+
+
+.photos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5rem;
+    padding: 2rem; 
+    margin-top: 5rem; 
+
+
+}
+
+.photo {
+    text-align: center;
+}
+
+.photo img {
+    display: block;
+    max-width: 100%;
+}
+
+.photo h2,
+.photo h3 {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+
+.photo h3{
+    color: rgb(255, 127, 86);
+ 
+}
+
+
+
+/*  end Ahmed Elomataz bellah alkamil  */
+
+/********************************************************************************************* Footer ****************************************/
+ 
+.footer {
+    margin-top: 50px;
+    padding-bottom: 45px;
+    background-color: #d5dcf3;
+}
+.footer p{
+    margin-bottom: 0;
+}
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+.subscribe {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 45px;
+    margin-bottom: 45px;
+    font-family: sans-serif;
+}
+.subscribe p {
+    font-size: 35px;
+    width: 50%;
+    line-height: 1.4;
+}
+form {
+    display: flex;
+    justify-content: flex-end;
+}
+.form-subscribe{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    border-radius: 8px;
+    background-color: white;
+    padding: 16px;
+}
+
+.form-subscribe input {
+    border: 0px;
+    outline: none;
+    width: 60%;
+    font-size: 16px;
+}
+.form-subscribe button {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 15px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    border: 0px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all ease 0.9s;
+}
+.form-subscribe button:hover {
+    background-color: var(--secondary-color-dark);
+}
+.row {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.footer-col {
+    width: 20%;
+}
+.footer-col:first-child {
+    width: 35%;
+}
+.footer-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.footer-logo .name-brand {
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'PlayfairDisplay';
+    color: var(--primary-color);
+}
+.footer-logo .name-brand span {
+    color:  var(--secondary-color);
+}
+.footer-col p {
+    color: var(--text-color-footer);
+}
+.footer-col h4 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.footer-social a {
+    color: var(--text-color-footer);
+    border: 1px solid var(--text-color-footer);
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+.footer-col ul {
+padding-left: 0;
+}
+.footer-col ul li {
+    list-style: none;
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 20px;
+}
+.footer-col ul li a {
+    color: var(--text-color-footer);
+    text-decoration: navajowhite;
+    transition: all 0.3s ease;
+}
+.footer-col ul li a i {
+    position: absolute;
+    left: 0;
+    top: 5px;
+    transition: all 0.1s ease;
+}
+.copy {
+    text-align: center;
+    text-transform: capitalize;
+    margin-top: 50px;
+}
+.footer-col ul li a:hover{
+    color: var(--secondary-color);
+    padding-left: 5px;
+}
+.footer-social .facebook:hover {
+    background-color: #0866FF;
+    color: white;
+}
+.footer-social .twitter:hover {
+    background-color: #1DA1F2;
+    color: white;
+}
+.footer-social .instagram:hover {
+background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+color: white;
+}
+.footer-social .linkedin:hover {
+    background-color: #0a66c2;
+    color: white;
+}
+
+ /********************************************************************************************* End Footer ****************************************/
+
+
+
+
+/******************************* It must be at the end of the page **********************/
+
+@media (max-width: 1300px) and (min-width:800px) {
+
+    section .image-header {
+        position: absolute;
+        bottom: 20%;
+        right: 0;
+    }
+
+    section#trending .card {
+        margin: auto;
+    }
+    section#about{
+        background-color: var(--primary-color);
+        width: 90%;
+        margin: auto;
+        padding: 70px 0;
+        justify-content: center;
+        display: flex;
+    }
+    section#trending .text-header {
+
+        right: 20%;
+    }
+
+}
+
+@media (max-width:780px) and (min-width: 570px) {
+    section#trending .text-header {
+
+        right: 0;
+    }
+    section#trending .card {
+        margin: auto;
+    }
+    section .image-header {
+        /* position: absolute;
+        bottom: 20%;
+        right: 0; */
+        visibility: hidden;
+    }
+    section#Home .text-header {
+        position: absolute;
+        top: 10%;
+        left: 20%;
+        width: 100%;
+    }
+    
+}

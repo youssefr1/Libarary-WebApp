@@ -1,0 +1,157 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+    
+    
+        <div class="text">
+           <p>
+            Eplore The World
+           
+           
+            &nbsp;&nbsp; &nbsp; With Books
+           </p>
+         </div>
+    
+         
+    
+    
+         <div class="container">
+    
+            <form action="#" method="POST" id="signup-form">
+                <h2>Sign Up</h2>
+    
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                    <div class="error-message" id="username-error"></div>
+
+                </div>
+    
+    
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                    <div id="email-error" class="error-message"></div> <!-- Added error message container -->
+    
+                </div>
+    
+    
+    
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                    <div class="error-message" id="password-error"></div>
+
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                    <div class="error-message" id="confirm-password-error"></div>
+
+                </div>
+    
+                <div class="form-group">
+                    <input class="check" type="checkbox" id="agree" required>
+                    <label for="agree">I agree to the terms and conditions</label>
+                </div>
+                <button type="submit">Sign Up</button>
+                <div class="form-group">
+                    <h5>Already have an account? <a href="../log in/login.html">Login</a></h5>
+                </div>
+    
+                   
+    
+            </form>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const form = document.getElementById("signup-form");
+                const usernameInput = document.getElementById("username");
+                const emailInput = document.getElementById("email");
+                const passwordInput = document.getElementById("password");
+                const confirmPasswordInput = document.getElementById("confirm-password");
+                const agreeCheckbox = document.getElementById("agree");
+        
+                const showError = (input, message) => {
+                    const errorElement = document.getElementById(`${input.id}-error`);
+                    errorElement.innerText = message;
+                };
+        
+                const showSuccess = input => {
+                    const errorElement = document.getElementById(`${input.id}-error`);
+                    errorElement.innerText = "";
+                };
+        
+                const checkRequired = inputs => {
+                    inputs.forEach(input => {
+                        if (input.value.trim() === "") {
+                            showError(input, `${getFieldName(input)} is required`);
+                        } else {
+                            showSuccess(input);
+                        }
+                    });
+                };
+        
+                const checkLength = (input, min, max) => {
+                    if (input.value.length < min) {
+                        showError(input, `${getFieldName(input)} must be at least ${min} characters`);
+                    } else if (input.value.length > max) {
+                        showError(input, `${getFieldName(input)} must be less than ${max} characters`);
+                    } else {
+                        showSuccess(input);
+                    }
+                };
+        
+                const checkEmail = input => {
+                    const email = input.value.trim();
+                    const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+                    if (!isValidEmail) {
+                        showError(input, "Please enter a valid email address");
+                    } else {
+                        showSuccess(input);
+                    }
+                };
+        
+                const checkPasswordsMatch = (password, confirmPassword) => {
+                    if (password.value !== confirmPassword.value) {
+                        showError(confirmPassword, "Passwords do not match");
+                    }
+                };
+        
+                const getFieldName = input => {
+                    return input.id.charAt(0).toUpperCase() + input.id.slice(1);
+                };
+        
+                form.addEventListener("submit", function(event) {
+                    event.preventDefault();
+        
+                    checkRequired([usernameInput, emailInput, passwordInput, confirmPasswordInput]);
+                    checkLength(usernameInput, 3, 15);
+                    checkLength(passwordInput, 6, 25);
+                    checkEmail(emailInput);
+                    checkPasswordsMatch(passwordInput, confirmPasswordInput);
+        
+                    if (!agreeCheckbox.checked) {
+                        alert("Please agree to the terms and conditions");
+                    }
+        
+                    // If everything is okay, you can proceed with form submission here
+                    // form.submit();
+                });
+            });
+        </script>
+        
+            
+    </body>
+    </html>
+        
+</body>
+</html>
